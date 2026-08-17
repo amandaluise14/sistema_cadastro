@@ -11,17 +11,17 @@ $livros = mysqli_query($conexao, "SELECT * FROM livros");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD - Livraria</title>
+    <title>Restaurante Anamandas</title>
     <link rel="stylesheet" href="style/styles.css">
 </head>
 
 <body>
     <header>
-        <h1>CRUD - Livraria</h1>
+        <h1>Restaurante Anamandas</h1>
     </header>
     <main>
-        <h2>Adicione um novo livro!</h2>
-        <form action="public/cadastrar.php" method="POST">
+        <h2>Adicione um novo pedido</h2>
+        <form action="public/cadastrar_pratos.php" method="POST">
             <label for="titulo">Título:</label>
             <input type="text" name="titulo">
             <br>

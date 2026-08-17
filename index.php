@@ -1,7 +1,7 @@
 <?php
 
 include "infra/conexao.php";
-$livros = mysqli_query($conexao, "SELECT * FROM livros");
+$livros = mysqli_query($conexao, "SELECT * FROM usuario");
 
 ?>
 
@@ -20,38 +20,32 @@ $livros = mysqli_query($conexao, "SELECT * FROM livros");
         <h1>Restaurante Anamandas</h1>
     </header>
     <main>
-        <h2>Adicione um novo pedido</h2>
-        <form action="public/cadastrar_pratos.php" method="POST">
-            <label for="titulo">Título:</label>
-            <input type="text" name="titulo">
+        <h2>Cadastro de Usuarios</h2>
+        <form action="public/cadastrar_usuario.php" method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome">
             <br>
-            <label for="autor">Autor:</label>
-            <input type="text" name="autor">
-            <br>
-            <label for="ano">Ano de Publicação:</label>
-            <input type="number" name="ano">
+            <label for="email">Email:</label>
+            <input type="text" name="email">
             <br>
             <button type="submit">Cadastrar</button>
         </form>
         <div>
-            <h2>Livros Cadastrados</h2>
+            <h2></h2>
             <table>
                 <tr>
                     <th>ID</th>
-                    <th>Título</th>
-                    <th>Autor</th>
-                    <th>Ano</th>
-                    <th>Ações</th>
+                    <th>Nome</th>
+                    <th>Email</th>
                 </tr>
-                <?php while ($livro = mysqli_fetch_assoc($livros)) { ?>
+                <?php while ($usuario = mysqli_fetch_assoc($usuario)) { ?>
                     <tr>
-                        <td><?php echo $livro["id"] ?></td>
-                        <td><?php echo $livro["titulo"] ?></td>
-                        <td><?php echo $livro["autor"] ?></td>
-                        <td><?php echo $livro["ano"] ?></td>
+                        <td><?php echo $usuario["id"] ?></td>
+                        <td><?php echo $usuario["nome"] ?></td>
+                        <td><?php echo $usuario["email"] ?></td>
                         <td>
-                            <a href="public/editar.php?id=<?php echo $livro["id"] ?>">Editar</a>
-                            <a href="public/excluir.php?id=<?php echo $livro["id"] ?>">Excluir</a>
+                            <a href="public/editar_usuario.php?id=<?php echo $usuario["id"] ?>">Editar</a>
+                            <a href="public/excluir_usuario.php?id=<?php echo $usuario["id"] ?>">Excluir</a>
                         </td>
                     </tr>
                 <?php } ?>

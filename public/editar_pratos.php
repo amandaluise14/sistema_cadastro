@@ -16,7 +16,7 @@ $livro =mysqli_fetch_assoc($resultado);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD - Livraria</title>
+    <title>Editar Prato</title>
     <link rel="stylesheet" href="style/styles.css">
 </head>
 
@@ -25,18 +25,21 @@ $livro =mysqli_fetch_assoc($resultado);
         <h1>CRUD - Livraria</h1>
     </header>
     <main>
-        <h2>Editando o livro <?php echo $livro["titulo"]?>!</h2>
-        <form action="atualizar.php" method="POST">
+        <h2>Editando o prato <?php echo $livro["nome"]?>!</h2>
+        <form action="atualizar_pratos.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $livro["id"]?>">
 
-            <label for="titulo">Título:</label>
-            <input type="text" name="titulo" value="<?php echo $livro["titulo"]?>">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" value="<?php echo $livro["nome"]?>">
             <br>
-            <label for="autor">Autor:</label>
-            <input type="text" name="autor" value="<?php echo $livro["autor"]?>">
+            <label for="descricao">Descrição:</label>
+            <input type="text" name="descricao" value="<?php echo $livro["descricao"]?>">
             <br>
-            <label for="ano">Ano de Publicação:</label>
-            <input type="number" name="ano" value="<?php echo $livro["ano"]?>">
+            <label for="preco">Preço:</label>
+            <input type="number" name="preco" value="<?php echo $livro["preco"]?>">
+            <br>
+            <label for="categoria">Categoria:</label>
+            <input type="text" name="categoria" value="<?php echo $livro["categoria"]?>">
             <br>
             <button type="submit">Atualizar</button>
         </form>

@@ -34,8 +34,8 @@ $resultado = mysqli_query($conexao, $sql);
             <label for="categoria">Categoria:</label>
             <input type="text" name="categoria">
             <br>
-            <label for="id_cliente">Cliente:</label>
-            <select name="id_cliente">
+            <label for="id_usuario">Usuário:</label>
+            <select name="id_usuario">
                 <option value="1">Selecione</option>
 
                 <?php
@@ -43,7 +43,7 @@ $resultado = mysqli_query($conexao, $sql);
                 $sql = "SELECT * FROM usuario";
                 $usuarios = mysqli_query($conexao,$sql);
 
-                while ($usuarios = mysqli_fetch_assoc($usuario)) { ?>
+                while ($usuario = mysqli_fetch_assoc($usuarios)) { ?>
 
                 <option value=" <?php echo $usuario["id"] ?>  "> 
                 <?php echo $usuario["nome"] ?> </option>
@@ -85,12 +85,12 @@ $resultado = mysqli_query($conexao, $sql);
                     <th>Nome</th>
                     <th>Email</th>-
                 </tr>
-                <?php while ($usuarios = mysqli_fetch_assoc($usuario)) {?>
+                <?php while ($usuario = mysqli_fetch_assoc($usuarios) {?>
                 
                         <tr>
                             <td><?php echo $usuario["id"] ?></td>
-                            <td><?php echo $usuario["Nome"] ?></td>
-                            <td><?php echo $usuario["Email"] ?></td>
+                            <td><?php echo $usuario["nome"] ?></td>
+                            <td><?php echo $usuario["email"] ?></td>
                         </tr>
                   <?php } ?> 
                     

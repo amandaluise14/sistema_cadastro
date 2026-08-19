@@ -1,6 +1,6 @@
 <?php
 
-include "../../infra/conexao.php";
+include "infra/conexao.php";
 $usuarios = mysqli_query($conexao, "SELECT * FROM usuario");
 
 ?>
@@ -12,7 +12,7 @@ $usuarios = mysqli_query($conexao, "SELECT * FROM usuario");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurante Anamandas</title>
-    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>

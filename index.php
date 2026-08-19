@@ -1,7 +1,7 @@
 <?php
 
 include "infra/conexao.php";
-$livros = mysqli_query($conexao, "SELECT * FROM usuario");
+$usuarios = mysqli_query($conexao, "SELECT * FROM usuario");
 
 ?>
 
@@ -38,15 +38,11 @@ $livros = mysqli_query($conexao, "SELECT * FROM usuario");
                     <th>Nome</th>
                     <th>Email</th>
                 </tr>
-                <?php while ($usuario = mysqli_fetch_assoc($usuario)) { ?>
+                <?php while ($usuario = mysqli_fetch_assoc($usuarios)) { ?>
                     <tr>
                         <td><?php echo $usuario["id"] ?></td>
                         <td><?php echo $usuario["nome"] ?></td>
                         <td><?php echo $usuario["email"] ?></td>
-                        <td>
-                            <a href="public/editar_usuario.php?id=<?php echo $usuario["id"] ?>">Editar</a>
-                            <a href="public/excluir_usuario.php?id=<?php echo $usuario["id"] ?>">Excluir</a>
-                        </td>
                     </tr>
                 <?php } ?>
             </table>

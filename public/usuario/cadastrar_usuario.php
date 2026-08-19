@@ -10,7 +10,7 @@ $stmt = $conexao->prepare(
     "INSERT INTO usuario (nome, email) VALUES (?, ?)"
 );
 
-$stmt -> bind_param ("ssi", $nome, $email);
+$stmt -> bind_param ("ss", $nome, $email);
 $stmt -> execute();
 
 )

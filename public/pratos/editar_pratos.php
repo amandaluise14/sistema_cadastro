@@ -16,6 +16,7 @@ $resultado = $stmt->get_result();
 
 $prato = mysqli_fetch_assoc($resultado);
 
+header("Location: ../../index.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,15 +1,22 @@
 <?php
 
-include "../infra/conexao.php";
+include "../../infra/conexao.php";
 
 $id = $_GET["id"];
-$sql = "SELECT * FROM livros WHERE id = $id";
-$resultado = mysqli_query($conexao, $sql );
 
-$livro =mysqli_fetch_assoc($resultado);
+$stmt = $conexao->prepare(
+    "SELECT * FROM prato WHERE id = ?"
+);
+
+$stmt->bind_param("i", $id);
+
+$stmt->execute();
+
+$resultado = $stmt->get_result();
+
+$prato = mysqli_fetch_assoc($resultado);
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,29 +24,26 @@ $livro =mysqli_fetch_assoc($resultado);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Prato</title>
-    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body>
-    <header>
-        <h1>CRUD - Livraria</h1>
-    </header>
     <main>
-        <h2>Editando o prato <?php echo $livro["nome"]?>!</h2>
+        <h2>Editando o prato <?php echo $prato["nome"]?>!</h2>
         <form action="atualizar_pratos.php" method="POST">
-            <input type="hidden" name="id" value="<?php echo $livro["id"]?>">
+            <input type="hidden" name="id" value="<?php echo $prato["id"]?>">
 
             <label for="nome">Nome:</label>
-            <input type="text" name="nome" value="<?php echo $livro["nome"]?>">
+            <input type="text" name="nome" value="<?php echo $prato["nome"]?>">
             <br>
             <label for="descricao">Descrição:</label>
-            <input type="text" name="descricao" value="<?php echo $livro["descricao"]?>">
+            <input type="text" name="descricao" value="<?php echo $prato["descricao"]?>">
             <br>
             <label for="preco">Preço:</label>
-            <input type="number" name="preco" value="<?php echo $livro["preco"]?>">
+            <input type="number" name="preco" value="<?php echo $prato["preco"]?>">
             <br>
             <label for="categoria">Categoria:</label>
-            <input type="text" name="categoria" value="<?php echo $livro["categoria"]?>">
+            <input type="text" name="categoria" value="<?php echo $prato["categoria"]?>">
             <br>
             <button type="submit">Atualizar</button>
         </form>

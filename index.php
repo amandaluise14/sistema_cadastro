@@ -1,6 +1,6 @@
 <?php
 
-include "infra/conexao.php";
+include "../../infra/conexao.php";
 $usuarios = mysqli_query($conexao, "SELECT * FROM usuario");
 
 ?>
@@ -21,7 +21,7 @@ $usuarios = mysqli_query($conexao, "SELECT * FROM usuario");
     </header>
     <main>
         <h2>Cadastro de Usuarios</h2>
-        <form action="public/cadastrar_usuario.php" method="POST">
+        <form action="public/usuario/cadastrar_usuario.php" method="POST">
             <label for="nome">Nome:</label>
             <input type="text" name="nome">
             <br>

@@ -1,3 +1,134 @@
-body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff0f5;
+    color: #333;
+}
+
+header {
+    background: #e91e63;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    color: #d81b60;
+    margin-bottom: 15px;
+}
+
+
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    margin: 12px 0 5px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #f3b6c9;
+    border-radius: 7px;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #e91e63;
+}
+
+
+button {
+    margin-top: 20px;
+    background: #e91e63;
+    color: white;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #c2185b;
+}
+
+
+table {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+}
+
+th {
+    background: #f8bbd0;
+    color: #880e4f;
+    padding: 13px;
+    text-align: left;
+}
+
+td {
+    padding: 13px;
+    border-bottom: 1px solid #f8d7e2;
+}
+
+tr:hover {
+    background: #fff5f8;
+}
+
+
+a {
+    text-decoration: none;
+    padding: 7px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+a[href*="editar"] {
+    background: #f48fb1;
+    color: white;
+}
+
+a[href*="editar"]:hover {
+    background: #ec407a;
+}
+
+a[href*="excluir"] {
+    background: #e91e63;
+    color: white;
+}
+
+a[href*="excluir"]:hover {
+    background: #c2185b;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    color: #888;
 }

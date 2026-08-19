@@ -37,7 +37,7 @@
                     Cadastre e consulte os usuários do restaurante.
                 </p>
 
-                <a href="public/usuario/index.php" class="btn">
+                <a href="public/usuario/cadastrar_" class="btn">
                     Acessar usuários
                 </a>
 
@@ -63,10 +63,6 @@
         </div>
 
     </main>
-
-    <footer>
-        <p>© 2026 Restaurante Anamandas</p>
-    </footer>
 
 </body>
 

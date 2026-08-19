@@ -12,9 +12,9 @@ $stmt = $conexao->prepare(
     "INSERT INTO prato (nome, descricao, preco, categoria, usuario_id) VALUES (?, ?, ?, ?, ?)"
 );
 
-$stmt -> bind_param ("ssis", $nome, $descricao, $preco, $categoria, $usuario_id);
+$stmt -> bind_param ("ssisi", $nome, $descricao, $preco, $categoria, $usuario_id);
 $stmt -> execute();
 
 
-header("Location: ../../pagina_prato.php");
+header("Location: ../../index.php");
 ?>

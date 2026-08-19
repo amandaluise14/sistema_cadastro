@@ -16,5 +16,5 @@ $stmt -> bind_param ("ssis", $nome, $descricao, $preco, $categoria, $usuario_id)
 $stmt -> execute();
 
 
-header("Location: ../index.php");
+header("Location: ../../pagina_prato.php");
 ?>

@@ -12,6 +12,7 @@ $stmt = $conexao->prepare(
 $stmt -> bind_param ("ss", $nome, $email);
 $stmt -> execute();
 
+header("Location: ../../pagina_usuario.php");
 
-header("Location: ../../index.php");
 ?>
+

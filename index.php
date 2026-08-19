@@ -22,14 +22,13 @@
         <h2>Bem-vindo!</h2>
 
         <p class="descricao">
-            O que você deseja acessar?
-        </p>
+            O que você deseja acessar?</p>
 
         <div class="cards">
 
             <div class="card">
 
-                <div class="icone">👤</div>
+                <div class="icone"></div>
 
                 <h3>Usuários</h3>
 
@@ -37,7 +36,7 @@
                     Cadastre e consulte os usuários do restaurante.
                 </p>
 
-                <a href="public/usuario/cadastrar_" class="btn">
+                <a href="pagina_usuario.php" class="btn">
                     Acessar usuários
                 </a>
 
@@ -54,7 +53,7 @@
                     Cadastre e consulte os pratos cadastrados no restaurante.
                 </p>
 
-                <a href="public/prato/index.php" class="btn">
+                <a href="pagina_prato.php" class="btn">
                     Acessar pratos
                 </a>
 

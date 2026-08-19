@@ -2,6 +2,12 @@
 
 include "infra/conexao.php";
 
+$sql = "SELECT pratos.*, usuario.nome AS usuario_nome
+        FROM pratos
+        INNER JOIN usuario ON pratos.usuario_id = usuario.id";
+
+$pratos = mysqli_query($conexao, $sql);
+
 $usuarios = mysqli_query($conexao, "SELECT * FROM usuario");
 
 $resultado = null;
@@ -24,6 +30,7 @@ if (isset($_GET["usuario_id"]) && $_GET["usuario_id"] != "") {
     $resultado = $stmt->get_result();
 }
 
+
 ?>
 
 <!DOCTYPE html>
@@ -32,11 +39,18 @@ if (isset($_GET["usuario_id"]) && $_GET["usuario_id"] != "") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
     <title>Pratos por Usuário</title>
     <link rel="stylesheet" href="style/listar_usuario.css">
 </head>
 
 <body class="listar-usuario">
+
 
     <header>
         <h1>Restaurante Anamandas</h1>
@@ -44,6 +58,41 @@ if (isset($_GET["usuario_id"]) && $_GET["usuario_id"] != "") {
 
     <main>
 
+        <h2>Pratos Cadastrados</h2>
+
+        <table>
+
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Categoria</th>
+                <th>Cadastrado por</th>
+                <th>Ações</th>
+            </tr>
+
+            <?php while ($pratos = mysqli_fetch_assoc($prato)) { ?>
+
+                <tr>
+                    <td><?php echo $prato["nome"]; ?></td>
+                    <td><?php echo $prato["descricao"]; ?></td>
+                    <td><?php echo $prato["preco"]; ?></td>
+                    <td><?php echo $prato["categoria"]; ?></td>
+                    <td><?php echo $prato["usuario_nome"]; ?></td>
+                <td>
+                        <a href="public/pratos/editar.php?id=<?php echo $prato["id"]; ?>">
+                            Editar
+                        </a>
+                        <a href="public/pratos/excluir.php?id=<?php echo $prato["id"]; ?>">
+                            Excluir
+                        </a>
+                    </td>
+
+                </tr>
+
+            <?php } ?>
+
+        </table>
         <h2>Pratos por Usuário</h2>
 
         <form method="GET">
@@ -103,6 +152,7 @@ if (isset($_GET["usuario_id"]) && $_GET["usuario_id"] != "") {
             </table>
 
         <?php } ?>
+>>>>>>> ae8b2a3b0ac9aec753a06c0cef6aa2c414a18cc6
 
     </main>
 
